@@ -210,6 +210,12 @@ without far more, cleaner data.
 - **Code:** the collection/training/eval scripts were written with AI assistance.
 
 ### Stretch features attempted
-- ✅ **Confidence calibration** — reported (model is overconfident/miscalibrated).
-- ✅ **Systematic error-pattern analysis** — "length/structure ≠ substance".
-- ❌ Inter-annotator reliability, deployed interface — not done (time).
+-  **Confidence calibration** — reported (model is overconfident/miscalibrated).
+-  **Systematic error-pattern analysis** — "length/structure ≠ substance".
+-  **Deployed interface** — `scripts/predict.py` takes a post and prints the
+  predicted label + confidence + full class distribution:
+  ```
+  ./.venv/bin/python scripts/predict.py "your r/anime comment here"
+  ./.venv/bin/python scripts/predict.py          # runs the built-in demo posts
+  ```
+- ❌ Inter-annotator reliability — not done (time).
