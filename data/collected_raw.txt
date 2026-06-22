@@ -1,0 +1,20 @@
+PASTE REAL r/anime COMMENTS BELOW. One comment per block. Separate every comment
+with a line containing only @@@  (three at-signs). Multi-line comments are fine.
+Delete these instruction lines (everything above the first @@@) before running intake.
+
+Aim for ~230-250 comments so you clear 200 after junk-filtering. You control the
+balance — to hit the 20%-per-class target, DELIBERATELY hunt for each type:
+
+  reaction  (easy, everywhere)  -> top of any Episode Discussion thread, sort by new
+  hot_take  (common)            -> "unpopular opinion" / tier-list / "X is overrated" threads
+  analysis  (the bottleneck!)   -> Rewatch threads, "Discussion" flair, high-upvote
+                                   top-level comments, weekly "casual discussion" effort posts
+
+Don't pre-sort by label here — just paste real comments. You'll label them in review.py.
+Skip pure questions, single emojis, and memes (the parser drops most of those anyway).
+
+@@@
+PASTE FIRST COMMENT HERE (then delete this line)
+@@@
+PASTE SECOND COMMENT HERE
+@@@

@@ -110,6 +110,35 @@ detail is illustrative rather than evidentiary, it's `reaction`. → **reaction.
 or memes with no take are **excluded at collection time** (not labeled), so the
 3 labels stay ≥90% exhaustive over what remains.
 
+### Three real hard cases encountered during annotation
+
+These are actual r/anime comments from the dataset that genuinely sat between two
+labels, with the call made:
+
+1. **`reaction` vs `analysis` —** *"The final part of the episode did bring a tear
+   to my eye… Season 1 has been pretty solid. The pacing felt rushed and they cut
+   some small bits out, but I suppose that's part of setting up the Zenza arc.
+   Hopefully future seasons have more breathing room."* — Mixes a real adaptation
+   observation (cut content, pacing serving arc setup) with strong emotion ("tear
+   to my eye", "easily my favourite part"). **Decided `reaction`:** the purpose is
+   to express how the episode *felt*; the pacing note is a passing aside, not a
+   built-out argument (Edge case C).
+
+2. **`hot_take` vs `analysis` —** *"I'm not a huge fan of how the MC is written. He
+   has little to no agency… the daemons don't immediately outclass him, that stunt
+   pulls me out."* — Long and structured, reads analytical, but every claim is
+   unsupported personal taste ("I find his character bland"). **Decided
+   `hot_take`:** strip the structured framing and no verifiable evidence remains
+   (Edge case A — decorative structure, not real reasoning). *(The model later
+   miscalled this exact comment `analysis` at 0.97 confidence — see README.)*
+
+3. **`hot_take` vs `reaction` —** *"25 minutes of straight fight animation, we
+   finally have some budget."* — A sarcastic claim about the production (budget),
+   but phrased as a short, casual quip. **Decided `hot_take`:** it asserts an
+   evaluative claim about the show's production rather than just emoting; contrast
+   a pure reaction like "that fight went so hard" (Edge case B / the sarcasm makes
+   it borderline, and short sarcastic production-claims are a known weak spot).
+
 ---
 
 ## 4. Data collection plan

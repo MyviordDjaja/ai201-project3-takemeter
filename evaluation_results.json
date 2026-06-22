@@ -1,0 +1,180 @@
+{
+  "finetuned": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "hyperparams": {
+      "epochs": 12,
+      "lr": 3e-05,
+      "batch": 16,
+      "max_len": 128
+    },
+    "accuracy": 0.625,
+    "macro_f1": 0.6259,
+    "per_class": {
+      "analysis": {
+        "precision": 0.5625,
+        "recall": 0.8182,
+        "f1": 0.6667,
+        "support": 11
+      },
+      "hot_take": {
+        "precision": 0.5,
+        "recall": 0.6429,
+        "f1": 0.5625,
+        "support": 14
+      },
+      "reaction": {
+        "precision": 0.8571,
+        "recall": 0.5217,
+        "f1": 0.6486,
+        "support": 23
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "analysis",
+        "hot_take",
+        "reaction"
+      ],
+      "matrix": [
+        [
+          9,
+          2,
+          0
+        ],
+        [
+          3,
+          9,
+          2
+        ],
+        [
+          4,
+          7,
+          12
+        ]
+      ]
+    },
+    "test_size": 48
+  },
+  "baseline": {
+    "model": "llama-3.3-70b-versatile (zero-shot)",
+    "accuracy": 0.75,
+    "macro_f1": 0.7108,
+    "per_class": {
+      "analysis": {
+        "precision": 0.6667,
+        "recall": 0.5455,
+        "f1": 0.6,
+        "support": 11
+      },
+      "hot_take": {
+        "precision": 0.75,
+        "recall": 0.6429,
+        "f1": 0.6923,
+        "support": 14
+      },
+      "reaction": {
+        "precision": 0.7778,
+        "recall": 0.913,
+        "f1": 0.84,
+        "support": 23
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "analysis",
+        "hot_take",
+        "reaction"
+      ],
+      "matrix": [
+        [
+          6,
+          2,
+          3
+        ],
+        [
+          2,
+          9,
+          3
+        ],
+        [
+          1,
+          1,
+          21
+        ]
+      ]
+    },
+    "test_size": 48
+  },
+  "comparison": {
+    "finetuned_macro_f1": 0.6259,
+    "baseline_macro_f1": 0.7108,
+    "delta_macro_f1": -0.0849
+  },
+  "error_analysis": {
+    "n_errors": 18,
+    "confusion_pairs": {
+      "reaction->hot_take": 7,
+      "reaction->analysis": 4,
+      "hot_take->analysis": 3,
+      "analysis->hot_take": 2,
+      "hot_take->reaction": 2
+    },
+    "avg_len_wrong": 274.3,
+    "avg_len_correct": 341.9,
+    "calibration": [
+      {
+        "bin": "0.5-0.7",
+        "n": 2,
+        "accuracy": 0.5
+      },
+      {
+        "bin": "0.7-0.9",
+        "n": 6,
+        "accuracy": 0.333
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 40,
+        "accuracy": 0.675
+      }
+    ],
+    "examples": [
+      {
+        "text": "I'm also not a huge fan of how the main character is being written. He has little to no agency in this story, and I am not emotionally engaged with his journey to find his parents at all. I know others feel he is unique, but I find his character rather bland and for some reason he is always participating in the fights. The fact that daemons don't immediately outclass him, specifically the stunt in the latest episode, pulls me out unfortunately.",
+        "true": "hot_take",
+        "pred": "analysis",
+        "confidence": 0.9732
+      },
+      {
+        "text": "Please don't tell me I'm the ONLY ONE who thinks Louise is never beating the Nepo Baby allegations? \ud83d\ude2d Because she went to another country to save a princess, possibly causing a war, but when arriving back home the Queen doesn't punish her or even make her apologie instead the Queen rewards Louise by giving her one of the most highest ranks anyone can get. It's not hard for someone to mistake that the noble girl (Louise), who's part of a well-known magic family and is childhood friends with the Princess, is conveniently getting away with ALL her crimes Should we put Louise on Fraud watch!? \ud83d\ude02\u270c\ufe0f",
+        "true": "hot_take",
+        "pred": "analysis",
+        "confidence": 0.9722
+      },
+      {
+        "text": "The final part of the episode did bring a tear to my eye. I do love seeing the Shiguma students all together. Season 1 has been pretty solid. The pacing felt rushed and they did cut some small bits out, but I suppose that's part of trying to set it up so that the end of season 1 finishes with the beginning of the Zenza arc. Hopefully future seasons will have a little more breathing room. And long may the Akane-kobanashi's continue. Easily my favourite part of the anime so far.",
+        "true": "reaction",
+        "pred": "analysis",
+        "confidence": 0.9712
+      },
+      {
+        "text": "Insane to think this fight was all for Will, Magia Vanders are truly insane feats in this series. That punch from Elfie was hilarious, who knew Ice magic also consisted of a fistful of love.",
+        "true": "reaction",
+        "pred": "hot_take",
+        "confidence": 0.9611
+      },
+      {
+        "text": "Exactly. The mutual respect between the protag and his daemons feels so well done, and Right & Left are genuinely great characters. The art style is killer as well.",
+        "true": "reaction",
+        "pred": "hot_take",
+        "confidence": 0.9601
+      },
+      {
+        "text": "25 minutes of straight fight animation, we finally have some budget",
+        "true": "hot_take",
+        "pred": "reaction",
+        "confidence": 0.9598
+      }
+    ]
+  }
+}

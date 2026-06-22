@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Working data (intermediate; the final labeled CSV IS committed — see below)
+data/raw_unlabeled.csv
+data/prelabeled.csv
+
+# OS
+.DS_Store
+
+# Browser-saved raw thread JSON (intermediate source; large)
+data/saved_threads/*.json
+
+# Saved model weights (88MB build artifact; reproducible via train_eval.py)
+models/
